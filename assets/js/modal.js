@@ -1,0 +1,1 @@
+!function(){let e=document?.querySelector('[data-modal="returned"]');if(e)for(const t of e.querySelectorAll("[data-close]"))t.addEventListener("click",()=>{e.style.opacity="0",setTimeout(()=>{e.classList.remove("active")},300)})}();
