@@ -96,7 +96,7 @@
                 <div class="container">
                     <ol class="breadcrumps__inner list-reset">
                         <li><a href="./index.html">Mainpage</a></li>
-                        <li><a href="./knowledge.html"></a>Knowkedge base</li>
+                        <li><a href="./knowledge.html">Knowkedge base</a></li>
                         <li>How to set up VPN Wireguard on your server</li>
                     </ol>
                 </div>
@@ -120,7 +120,7 @@
             
                                 <!-- =========аккордеон для отображения содержания страницы======== -->
                                 <div class="accordion-container single-container">
-                                    <div class="ac single-container-menu">
+                                    <!-- <div class="ac single-container-menu">
                                         <h2 class="ac-header">
                                             <button type="button" class="ac-trigger">Содержание</button>
                                         </h2>
@@ -135,7 +135,7 @@
                                                 <button type="button" class="ac-trigger ac-trigger__repeater">Свернуть</button>
                                             </h2>
                                         </div>
-                                    </div>
+                                    </div> -->
             
                                     <div class="ac single-container-menu">
                                         <h2 class="ac-header">
@@ -594,20 +594,37 @@
                                     <textarea class="question__inner__form__textarea input__image question__inner__form__input"
                                         placeholder="Message"
                                         style="background-image: url('./assets/images/sprite.svg#questions--input-area');"></textarea>
-                                    <div class="question__inner__form__wrapper">
+                                    <div class="question__inner__form__wrapper__checkbox">
                                         <input type="checkbox" class="question__inner__form__wrapper__check" id="checkbox">
                                         <label for="checkbox">I agree to processing of personal data according to terms of
                                             service.</label>
                                     </div>
-                                    <div class="question__inner__form__recaptcha"></div>
+                                    <div class="question__inner__form__recaptcha">
+                                        <!-- блок под вставку капчи, если таковой будет -->
+                                    </div>
                                     <div class="question__inner__form__answer">Please, check our <a href="">Knowledge base,</a> most
                                         likely the answer to your question is already there!</div>
                                 </div>
-                                <input type="submit" value="Send">
+                                <input type="submit" value="Send" data-modal="open">
                             </form>
                             <div class="question__inner__box__chat">
-            
+                                <!-- сюда вставлять код чата -->
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- модальное окно -->
+            <section class="returned fix_block" data-modal="modal" >
+                <div class="container">
+                    <div class="returned__inner">
+                        <div class="returned__inner__modal">
+                            <img src="./assets/images/sprite.svg#svg--close" class="svg-svg--close-dims returned__inner__modal__close" alt="svg--close" width="17" height="17" data-close>
+                            <img src="./assets/images/sprite.svg#svg--yes" class="svg-svg--yes-dims image__center" alt="svg--yes" width="106" height="106">
+                            <h6 class="returned__inner__notification__title resetmp">Your message has been sent</h6>
+                            <span class="returned__inner__notification__subtitle">Мы обязательно рассмотрим ваше сообщение как можно быстрее</span>
+                            <button class="returned__inner__modal__link returned__notification__modal__link" data-close>Понятно</button>
                         </div>
                     </div>
                 </div>

@@ -297,32 +297,58 @@
         
         
         
-        <section class="question padding__90" id="question">
+        <section class="question padding__90">
             <div class="container">
                 <div class="question__inner">
                     <h2 class="question__inner__tltle project__title">Ask a question</h2>
-                    <span class="question__inner__subtitle project__subtitle">We are always ready to answer your questions at any time of day or night.</span>
+                    <span class="question__inner__subtitle project__subtitle">We are always ready to answer your questions at
+                        any time of day or night.</span>
                     <div class="question__inner__box">
                         <form action="">
                             <div class="question__inner__form">
                                 <div class="question__inner__form__wrapper">
-                                    <input type="text" class="question__inner__form__input input__image" placeholder="Your name" style="background-image: url('./assets/images/sprite.svg#questions--input-text');">
-                                    <input type="email" class="question__inner__form__input input__image" placeholder="Your E-mail" style="background-image: url('./assets/images/sprite.svg#questions--input-email');">
+                                    <input type="text" class="question__inner__form__input input__image" placeholder="Your name"
+                                        style="background-image: url('./assets/images/sprite.svg#questions--input-text');">
+                                    <input type="email" class="question__inner__form__input input__image"
+                                        placeholder="Your E-mail"
+                                        style="background-image: url('./assets/images/sprite.svg#questions--input-email');">
                                 </div>
-                                <input type="tel" class="question__inner__form__input input__image" placeholder="Phone" style="background-image: url('./assets/images/sprite.svg#questions--input-phone');">
-                                <textarea class="question__inner__form__textarea input__image question__inner__form__input" placeholder="Message" style="background-image: url('./assets/images/sprite.svg#questions--input-area');"></textarea>
-                                <div class="question__inner__form__wrapper">
+                                <input type="tel" class="question__inner__form__input input__image" placeholder="Phone"
+                                    style="background-image: url('./assets/images/sprite.svg#questions--input-phone');">
+                                <textarea class="question__inner__form__textarea input__image question__inner__form__input"
+                                    placeholder="Message"
+                                    style="background-image: url('./assets/images/sprite.svg#questions--input-area');"></textarea>
+                                <div class="question__inner__form__wrapper__checkbox">
                                     <input type="checkbox" class="question__inner__form__wrapper__check" id="checkbox">
-                                    <label for="checkbox">I agree to processing of personal data according to terms of service.</label>
+                                    <label for="checkbox">I agree to processing of personal data according to terms of
+                                        service.</label>
                                 </div>
-                                <div class="question__inner__form__recaptcha"></div>
-                                <div class="question__inner__form__answer">Please, check our <a href="">Knowledge base,</a> most likely the answer to your question is already there!</div>
+                                <div class="question__inner__form__recaptcha">
+                                    <!-- блок под вставку капчи, если таковой будет -->
+                                </div>
+                                <div class="question__inner__form__answer">Please, check our <a href="">Knowledge base,</a> most
+                                    likely the answer to your question is already there!</div>
                             </div>
-                            <input type="submit" value="Send">
+                            <input type="submit" value="Send" data-modal="open">
                         </form>
                         <div class="question__inner__box__chat">
-                            
+                            <!-- сюда вставлять код чата -->
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- модальное окно -->
+        <section class="returned fix_block" data-modal="modal" >
+            <div class="container">
+                <div class="returned__inner">
+                    <div class="returned__inner__modal">
+                        <img src="./assets/images/sprite.svg#svg--close" class="svg-svg--close-dims returned__inner__modal__close" alt="svg--close" width="17" height="17" data-close>
+                        <img src="./assets/images/sprite.svg#svg--yes" class="svg-svg--yes-dims image__center" alt="svg--yes" width="106" height="106">
+                        <h6 class="returned__inner__notification__title resetmp">Your message has been sent</h6>
+                        <span class="returned__inner__notification__subtitle">Мы обязательно рассмотрим ваше сообщение как можно быстрее</span>
+                        <button class="returned__inner__modal__link returned__notification__modal__link" data-close>Понятно</button>
                     </div>
                 </div>
             </div>
