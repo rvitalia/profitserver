@@ -1,0 +1,224 @@
+.footer {
+    padding-bottom: 18rem;
+    border-top: 1px solid #DBECEC;
+
+    @include vds {
+        padding-bottom: 11.4rem;
+    }
+}
+
+.footer__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include vds {
+        flex-wrap: wrap;
+    }
+}
+
+.footer__inner__item {
+    display: flex;
+    flex-direction: column;
+    color: #3A3A3A;
+
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+        padding-top: 1rem;
+    }
+
+    &:nth-child(1) {
+
+        @include vds {
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            & .footer__inner__item__box {
+                width: 100%;
+            }
+        }
+    }
+
+    &:nth-child(2) {
+
+        @include vds {
+            padding-top: 3rem;
+            width: 100%;
+
+            & .footer__inner__item__nav {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                max-width: 35rem;
+                column-gap: 2.2rem;
+                row-gap: 1rem;
+            }
+        }
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+        @include vds {
+            padding-top: 2rem;
+            flex-basis: 50%;
+            // max-width: 36rem;
+
+            & .footer__inner__item__nav {
+                display: flex;
+                flex-wrap: wrap;
+                column-gap: 2.36rem;
+                row-gap: 1rem;
+            }
+        }
+
+        @include mobile {
+            flex-basis: unset;
+            width: 100%;
+        }
+    }
+
+    &:nth-child(3)+&:nth-child(4) {
+        @include vds {
+            padding-left: 2rem;
+        }
+
+        @include mobile {
+            padding-left: 0;
+        }
+    }
+
+    &:nth-child(5) {
+        @include vds {
+            padding-top: 4rem;
+            width: 100%;
+
+            &>.footer__inner__item__link {
+                max-width: none;
+                margin-bottom: 3rem;
+            }
+
+            &>.footer__inner__item__social {
+                max-width: none;
+            }
+        }
+    }
+}
+
+.svg-footer--Logo-dims {
+    width: 262.621px;
+    height: 64px;
+    margin-bottom: 2.748rem;
+
+    @include vds {
+        margin-bottom: 1.5rem;
+        grid-column: 3 span;
+    }
+}
+
+.footer__inner__item__copy {
+    font-size: 12px;
+    // font-weight: 300;
+    line-height: 23px;
+    margin-bottom: 1.3rem;
+
+    @include vds {
+        grid-column: 1 span;
+        margin: 0;
+    }
+}
+
+.footer__inner__item__offer {
+    max-width: 19rem;
+    margin-bottom: 5.952rem;
+
+    @include vds {
+        max-width: none;
+        grid-column: 2 span;
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+.svg-footer--Group-dims {
+    width: 167.637px;
+    height: 18.577px;
+}
+
+.footer__inner__item__title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    margin-top: 0;
+
+    @include mobile {
+        margin-bottom: 1rem;
+    }
+}
+
+.footer__inner__item__nav {
+    &>li {
+        color: #63B7E3;
+        font-weight: 400;
+        font-size: var(--size--main);
+
+        & a {
+            font-size: inherit;
+            border-bottom: 1px solid transparent;
+            transition: border 0.3s linear;
+
+            // &:hover {
+                // border-color: #00ABE1;
+            // }
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 1.6rem;
+
+            @include vds {
+                margin: 0;
+            }
+        }
+    }
+}
+
+.footer__inner__item__link {
+    max-width: 19rem;
+    border-radius: 4px;
+    background: #57A9DF;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 50px;
+    color: #FFF;
+    text-align: center;
+    margin-bottom: 3.946rem;
+    transition: background 0.3s linear;
+
+    &:hover {
+        background: #63B7E3;
+    }
+}
+
+.footer__inner__item__social {
+    max-width: 19rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+}
+
+.footer__inner__item__social__link {
+    width: 33px;
+    height: 33px;
+    transition: all 0.3s linear;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &>img {
+        width: inherit;
+        height: inherit;
+    }
+}

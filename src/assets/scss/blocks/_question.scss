@@ -1,0 +1,231 @@
+.question {
+    padding-bottom: 9rem;
+
+    @include small-tablet{
+        padding-bottom: 6rem;
+    }
+}
+
+
+.question__inner {}
+
+.question__inner__tltle {
+    text-align: left;
+}
+
+.question__inner__subtitle {
+    text-align: left;
+    padding-bottom: 4rem;
+
+    @include tablet{
+       max-width: 35rem; 
+       padding-bottom: 2rem;
+    }
+}
+
+.question__inner__box {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 9rem;
+    align-items: center;
+    padding-bottom: 1.4rem;
+
+    @include small-tablet{
+        column-gap: 3rem;
+    }
+
+    @include benefits{
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+}
+
+.question__inner__box form,
+.question__inner__box .question__inner__box__chat {
+    flex-basis: 50%;
+
+    @include mobile{
+        width: 100%;
+        flex-basis: unset;
+    }
+}
+
+.input__image {
+    background-repeat: no-repeat;
+    background-position-x: 0px;
+    background-position-y: 10px;
+    background-size: 22px;
+}
+
+.question__inner__form {
+    border-radius: 8px;
+    border: 1px solid #DBECEC;
+    padding: 1rem 1.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.question__inner__form__wrapper {
+    width: 100%;
+    display: flex;
+    column-gap: 2rem;
+    margin-bottom: 2.2rem;
+    
+    @include small-tablet{
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+    
+    @include benefits{
+        align-items: unset;
+    }
+}
+
+.question__inner__form__wrapper__checkbox {
+    display: flex;
+    column-gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2.2rem;
+}
+
+.question__inner__form__input {
+    width: 100%;
+    height: 48px;
+    color: #3A3A3A;
+    font-family: var(--font-family);
+    font-size: var(--size--main);
+    font-weight: 300;
+    line-height: 23px;
+    border: none;
+    border-bottom: 1px solid #63B7E3;
+    padding: 1rem 0rem 1.5rem 4.5rem;
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: #3A3A3A;
+        font-family: var(--font-family);
+        font-size: var(--size--main);
+        font-weight: 300;
+        line-height: 23px;
+    }
+}
+
+.question__inner__form {
+    & input[type='tel'] {
+        margin-bottom: 5rem;
+    }
+}
+
+.question__inner__form__textarea {
+    resize: none;
+    overflow-y: auto;
+    height: 4.9rem;
+    margin-bottom: 2.5rem;
+}
+
+
+.question__inner__form__wrapper__check {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+        color: #3A3A3A;
+        font-family: var(--font-family);
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24px;
+        /* 200% */
+    }
+
+    &+label::before {
+        content: '';
+        display: inline-block;
+        flex-shrink: 0;
+        flex-grow: 0;
+        margin-right: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 120% 120%;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 1px solid #8CBDBD;
+        border-radius: 4px;
+        width: 20px;
+        height: 20px;
+        outline: none;
+        cursor: pointer;
+    }
+
+    &:checked+label::before {
+        background-image: url(data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2221%22%20height=%2220%22%20viewBox=%220%200%2021%2020%22%20fill=%22none%22%3E%20%20%20%3Cpath%20d=%22M3.25809%209.66386C3.03637%209.42939%203.03637%209.04935%203.25809%208.81488C3.47796%208.58041%203.83917%208.58041%204.05904%208.81488L8.50358%2013.5131L16.8134%204.47229C17.0314%204.23587%2017.3908%204.23196%2017.6144%204.46057C17.8379%204.69113%2017.8416%205.07116%2017.6254%205.30759L8.94332%2014.7528C8.93223%2014.7665%208.92207%2014.7773%208.90914%2014.789C8.68926%2015.0235%208.3299%2015.0235%208.10818%2014.789L3.25809%209.66386Z%22%20fill=%22#49B550%22/%3E%20%20%20%3Cpath%20d=%22M3.72882%200H16.7544C17.7134%200%2018.5845%200.39078%2019.2171%201.02418C19.8488%201.65676%2020.2412%202.52951%2020.2412%203.48693V16.5131C20.2412%2017.4705%2019.8504%2018.3432%2019.2171%2018.9742V18.9758C18.5845%2019.6068%2017.7118%2020%2016.7544%2020H3.72882C2.77143%2020%201.90035%2019.6076%201.26779%2018.9758V18.9742H1.26535C0.634421%2018.3432%200.241211%2017.4697%200.241211%2016.5131V3.48693C0.241211%202.52788%200.633607%201.65676%201.26535%201.02418H1.26698C1.89953%200.39078%202.77143%200%203.72882%200ZM16.7544%200.460801H3.72882C2.89762%200.460801%202.14051%200.801106%201.59343%201.3482L1.5918%201.34983C1.0431%201.89693%200.702806%202.65407%200.702806%203.48693V16.5131C0.702806%2017.3443%201.0431%2018.1014%201.5918%2018.6502H1.59343C2.14051%2019.1989%202.89762%2019.5392%203.72882%2019.5392H16.7544C17.5872%2019.5392%2018.3444%2019.1989%2018.8914%2018.6502H18.8931C19.4401%2018.1014%2019.7804%2017.3443%2019.7804%2016.5131V3.48693C19.7804%202.65407%2019.4401%201.89693%2018.8931%201.34983L18.8914%201.3482C18.3444%200.801106%2017.5881%200.460801%2016.7544%200.460801Z%22%20fill=%22#8CBDBD%22/%3E%20%3C/svg%3E);
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.question__inner__form__recaptcha {
+    width: 30.2rem;
+    height: 7.6rem;
+    background: #F9F9F9;
+    border-radius: 3px;
+    border: 1px solid #D3D3D3;
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2.1rem;
+}
+
+.question__inner__form__answer {
+    color: #3A3A3A;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+
+    &>a {
+        font-size: 14px;
+        color: #00E;
+        text-decoration-line: underline;
+    }
+}
+
+.question__inner__box form input[type=submit] {
+    border-radius: 4px;
+    background: #8AB35E;
+    border: none;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+    padding: 0 7.3rem;
+    cursor: pointer;
+    transition: background 0.3s linear;
+    
+    &:hover{
+        background: #94BD68;
+    }
+}
+
+.question__inner__box__chat {
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.08);
+    border: 1px solid #D3D3D3;
+    width: 100%;
+    min-height: 52.5rem;
+
+    @include small-tablet{
+        flex-grow: 1;
+        min-height: 61.7rem;
+    }
+    
+}

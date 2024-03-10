@@ -1,0 +1,180 @@
+.knowledgeask {
+    padding-top: 4.5rem;
+
+    @include benefits {
+        padding-top: 0;
+    }
+}
+
+.knowledgeask__inner {
+    @include tablet {
+        position: relative;
+        padding-bottom: 6.6rem;
+    }
+}
+
+.knowledgeask__inner__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.6rem;
+
+    @include small-tablet {
+        display: block;
+    }
+}
+
+.knowledgeask__inner__top__tabs {
+    display: flex;
+    column-gap: 1rem;
+    max-width: 72.7rem;
+
+    @include small-tablet {
+        max-width: none;
+    }
+
+    @include benefits {
+        display: none;
+    }
+}
+
+.knowledgeask__inner__top__tabs__item {
+    border-radius: 4px;
+    background: #E5F1F1;
+    padding: 1.2rem 2rem;
+    color: #528F8F;
+    font-size: 18px;
+    border: 1px solid transparent;
+    transition: all 0.3s linear;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--hover-white);
+        border-color: #A3CDCD;
+        color: var(--blue-100);
+    }
+
+    @include small-tablet {
+        width: 100%;
+        white-space: nowrap;
+        padding: 1.2rem 2.3rem;
+    }
+
+    &.active {
+        background: var(--hover-white);
+        border-color: #A3CDCD;
+        color: var(--blue-100);
+    }
+}
+
+.knowledgeask__inner__top__link {
+    border-radius: 4px;
+    background: #3C95CF;
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    line-height: 50px;
+    padding: 0rem 3.2rem;
+    transition: background 0.3s linear;
+
+    &:hover {
+        background: var(--hover-blue);
+    }
+
+    @include tablet {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+}
+
+.knowledgeask__inner__bottom {
+    & hr {
+        border: none;
+        background-color: #DBECEC;
+        height: 1px;
+        margin: 6px 0 5px;
+    }
+}
+
+.knowledgeask__inner__bottom__tabs {
+    display: none;
+    transition: opacity 0.3s linear;
+
+    &.active {
+        display: block;
+        opacity: 0;
+    }
+
+    & li {
+        border-radius: 8px;
+        background: #FFF;
+        padding: 19px 30px 19px 0;
+        position: relative;
+        cursor: pointer;
+        border: 1px solid transparent;
+
+        &::after {
+            content: '';
+            width: 11.985px;
+            height: 22px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            background-image: url(data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2223%22%20viewBox=%220%200%2012%2023%22%20fill=%22none%22%3E%20%20%20%3Crect%20x=%2210.9102%22%20y=%2210.5154%22%20width=%221.54081%22%20height=%2215.4081%22%20rx=%220.770405%22%20transform=%22rotate%2845%2010.9102%2010.5154%29%22%20fill=%22#00ABE1%22/%3E%20%20%20%3Crect%20x=%220.015625%22%20y=%221.5896%22%20width=%221.54081%22%20height=%2215.4081%22%20rx=%220.770405%22%20transform=%22rotate%28-45%200.015625%201.5896%29%22%20fill=%22#00ABE1%22/%3E%20%3C/svg%3E);
+        }
+
+        & a {
+            color: #3A3A3A;
+            font-size: 20px;
+            transition: color 0.3s linear;
+
+            &:hover {
+                color: var(--blue-100);
+            }
+        }
+    }
+}
+
+.accordion-knowledge {
+    display: none;
+
+    @include benefits {
+        display: block;
+    }
+
+    & .knowledgeask__inner__bottom__tabs {
+        display: block;
+    }
+}
+
+.ac__knowledge {
+    border: none;
+    color: #3C95CF;
+    font-size: 20px;
+    background: none;
+
+    & h2 {
+        background: none !important;
+        border-bottom: 1px solid #DBECEC !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    & button {
+        color: inherit !important;
+        font-size: 20px !important;
+        font-family: var(--font-family) !important;
+    }
+
+    & .ac-text {
+        padding-left: 0 !important;
+    }
+
+    & hr {
+        height: 0;
+    }
+}

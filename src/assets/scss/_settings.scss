@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after{
+    font-size: 10px;
+    box-sizing: border-box;
+}
+img {
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+  }
+a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .btn-reset {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .background-center{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .resetmp{
+    margin: 0;
+    padding: 0;
+  }

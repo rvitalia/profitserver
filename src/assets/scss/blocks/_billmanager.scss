@@ -1,0 +1,67 @@
+.billmanager {
+    padding: 8.6rem 0rem 16.4rem;
+    background: #ECF5F5;
+
+    @include for-desktop{
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.billmanager__inner {
+}
+.billmanager__inner__title {
+    padding-bottom: 7.7rem;
+
+    @include for-desktop{
+        padding-bottom: 4.6rem;
+    }
+
+    @include mobile{
+        padding-bottom: 3.7rem;
+    }
+}
+
+.billmanager__inner__text {
+    display: block;
+    margin: 0 auto;
+    font-size: var(--size--main);
+    line-height: 24px;
+    font-weight: 400;
+    color: #3A3A3A;  
+    text-align: center;
+    max-width: var(--content-width);
+    
+    &+&{
+        padding-top: 0.4rem;
+        padding-bottom: 10rem;
+
+        @include for-desktop{
+            padding-bottom: 4.6rem;
+        }
+
+        @include mobile{
+            padding-bottom: 3.7rem;
+        }
+    }
+
+    @include mobile{
+        // display: none;
+    }
+}
+.billmanager__inner__wrapper {
+    flex-wrap: wrap;
+    row-gap: 7rem;
+
+    &__item{
+        max-width: 80rem;
+
+        & img{
+            width: 100%;
+        }
+    }
+
+    @include for-desktop{
+        row-gap: 4rem;
+    }
+}

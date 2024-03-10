@@ -1,0 +1,103 @@
+.AffiliateHero {
+    background: #E5F1F1;
+
+    // @include small-mobile{
+    //     display: none;
+    // }
+}
+.AffiliateHero__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.AffiliateHero__inner__item{
+    flex-basis: 50%;
+    max-height: 39.5rem;
+
+    @include benefits{
+        flex-basis: unset;
+        width: 100%;
+    }
+
+    & img{
+        max-height: inherit;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+
+    }
+
+    & + &{
+        @include benefits{
+            display: none;
+        }
+    }
+}
+.AffiliateHero__inner__title {
+    padding-top: 2.9rem;
+    text-align: left;
+    color: #3A3A3A;
+    font-size: 36px;
+    font-weight: 700;
+
+    @include small-tablet{
+        font-size: 3.2rem;
+        padding-top: 1.6rem;
+    }
+}
+.AffiliateHero__inner__subtitle {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 3rem;
+    color: var(--black-75, #3A3A3A);
+    
+
+    @include small-tablet{
+        font-size: var(--size--main);
+        margin-bottom: 2.265rem;
+    }
+}
+.AffiliateHero__inner__adventages {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    margin-bottom: 3rem;
+
+    @include small-tablet{
+        row-gap: 2.325rem;
+        margin-bottom: 5rem;
+    }
+
+    li{
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 24.51px;
+
+        &:before{
+            display: inline-block;
+            content: "";
+            fill: #00AB26;
+            background-image: url(data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2222%22%20height=%2217%22%20viewBox=%220%200%2022%2017%22%20fill=%22none%22%3E%20%3Cpath%20d=%22M0.439199%2010.1012C-0.002801%209.6612%20-0.00480071%208.9452%200.435199%208.5022C0.875199%208.0602%201.5912%208.0582%202.0342%208.4982L7.1412%2013.5642L19.9392%200.8102C20.3812%200.3702%2021.0982%200.372198%2021.5382%200.814198C21.9782%201.2562%2021.9762%201.9732%2021.5342%202.4132L7.9402%2015.9602C7.5002%2016.3982%206.7872%2016.3992%206.3452%2015.9602L0.439199%2010.1012Z%22%20fill=%22#00AB26%22/%3E%20%3C/svg%3E);
+            width: 21.761px;
+            height: 15.808px;
+            margin-right: 1.819rem;
+        }
+    }
+}
+
+.AffiliateHero__inner__linkmore {
+    display: block;
+    white-space: nowrap;
+    max-width: 15.025rem;
+    padding: 1.8rem 3.3rem;
+    border-radius: 4px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+
+    @include benefits{
+        margin-bottom: 5.8rem;
+    }
+}

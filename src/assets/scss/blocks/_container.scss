@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-offset);
+}
+
+.container__fluid{
+    max-width: var(--container-fluid-width);
+}
+
+.container__medium{
+    max-width: var(--container-medium-width);
+}

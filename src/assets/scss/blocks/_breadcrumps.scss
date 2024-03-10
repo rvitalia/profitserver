@@ -1,0 +1,39 @@
+.breadcrumps {
+    padding: 1.6rem 0;
+}
+.breadcrumps__inner {
+    display: flex;
+    column-gap: 2.6rem;
+    align-items: center;
+
+    @include mobile{
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+
+    & li{
+        display: inline-flex;
+        color: #6B6B6B;
+        font-size: 14px;
+        font-weight: 400;
+
+        & a{
+            font-size: inherit;  
+            transition: color,border 0.3s linear;
+            border-bottom: 1px solid transparent;
+            
+            &:hover{
+                color: var(--blue-100);
+                border-color: var(--blue-100);
+            }
+        }
+
+        &:first-child::before{
+            content: '';
+            width: 8.5px;
+            height: 17px;
+            background-image: url(data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2210%22%20height=%2219%22%20viewBox=%220%200%2010%2019%22%20fill=%22none%22%3E%20%3Cpath%20d=%22M9.5%201L1%209.5L9.5%2018%22%20stroke=%22#00ABE1%22/%3E%20%3C/svg%3E);
+            margin-right: 1.85rem;
+        }
+    }
+}

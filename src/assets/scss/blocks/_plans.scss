@@ -1,0 +1,62 @@
+.plans {}
+
+.plans__inner {
+    margin-top: 4.552rem;
+}
+
+.plans__inner__title {
+    text-align: left;
+    margin-bottom: 4rem;
+
+    @include mobile{
+        max-width: 245px;
+        line-height: 42px;
+    }
+}
+
+.plans__inner__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10rem;
+
+    @include small-tablet{
+        grid-template-columns: 1fr;
+    }
+}
+
+.plans__inner__wrapper__item {
+    &>li {
+        display: flex;
+        column-gap: 1rem;
+        align-items: center;
+        
+        color: #3A3A3A;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+
+    &>li:not(:last-child) {
+        margin-bottom: 3rem;
+
+        @include mobile{
+            margin-bottom: 2rem;
+        }
+    }
+
+    &>li:before {
+        content: '';
+        width: 33px;
+        height: 19.709px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url(data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2222%22%20height=%2217%22%20viewBox=%220%200%2022%2017%22%20fill=%22none%22%3E%20%3Cpath%20d=%22M0.439199%2010.1012C-0.002801%209.6612%20-0.00480071%208.9452%200.435199%208.5022C0.875199%208.0602%201.5912%208.0582%202.0342%208.4982L7.1412%2013.5642L19.9392%200.8102C20.3812%200.3702%2021.0982%200.372198%2021.5382%200.814198C21.9782%201.2562%2021.9762%201.9732%2021.5342%202.4132L7.9402%2015.9602C7.5002%2016.3982%206.7872%2016.3992%206.3452%2015.9602L0.439199%2010.1012Z%22%20fill=%22#00AB26%22/%3E%20%3C/svg%3E);
+    }
+
+    & + &{
+        @include tablet{
+            margin-top: 3rem;
+        }
+    }
+
+}

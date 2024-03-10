@@ -1,0 +1,115 @@
+.promo {}
+
+.promo__inner {}
+
+.promo__inner__item.image--small img {
+    @include small-tablet-min{
+        max-width: 22.8rem;
+    }
+}
+
+.promo__inner__item.image--medium img {
+    @include small-tablet-min{
+        max-width: 25.4rem;
+    }
+}
+.promo__inner__item.image--large {
+    flex-wrap: nowrap;
+
+    @include big-desktop{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+    @include benefits{
+        gap: 2rem;
+    }
+}
+.promo__inner__item.image--large img {
+    @include small-tablet-min{
+        max-width: 53.6rem;
+    }
+}
+
+.promo__inner__item.--landscape img{
+    @include mobile{
+        grid-column: 2 span;
+    }
+}
+
+.promo__inner__title {
+    padding-top: 3.6rem;
+    padding-bottom: 7.3rem;
+
+    @include for-desktop {
+        padding-bottom: 3rem;
+    }
+
+    @include tablet {
+        padding-top: 3rem !important;
+    }
+
+    @include mobile{
+        padding-top: 1.6rem;
+    }
+}
+
+.promo__inner__imgtitle {
+    display: block;
+    color: #3A3A3A;
+    text-align: center;
+    font-size: 31px;
+    padding-bottom: 3rem;
+}
+
+.promo__inner__item {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+
+    @include desktop_1750 {
+        justify-content: center;
+    }
+
+    @include small-tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    @include mobile {
+        gap: 2rem;
+    }
+
+    &>img {
+        width: 100%;
+
+        @include tablet {
+            max-width: none;
+        }
+
+    }
+}
+
+.promo__inner__link {
+    display: block;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
+    padding: 0rem 3rem;
+    background: #8AB35E;
+    border-radius: 4px;
+    max-width: 19rem;
+    margin: 0 auto 10rem;
+    transition: background 0.3s linear;
+
+    &:hover {
+        background: #94bd68;
+    }
+
+    @include tablet {
+        margin-bottom: 6.1rem;
+    }
+}

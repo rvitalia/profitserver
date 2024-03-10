@@ -1,0 +1,87 @@
+// @import 'vendor/reset';
+@import 'blocks/vars';
+@import 'mixins';
+@import '../../../node_modules/accordion-js/dist/accordion.min';
+@import '../../../node_modules/swiper/swiper-bundle.min';
+@import '../../../node_modules/aos/dist/aos';
+
+@import 'fonts';
+@import 'settings';
+
+
+html,body{
+  height: 100%;
+  font-family: var(--font-family);
+  margin: 0;
+}
+
+.main{
+  height: 100%;
+  flex: 1 0 auto; 
+  font-size: var(--size-main);
+  font-style: normal;
+  line-height: normal;
+}
+
+/* Работает в Chrome, Edge и Safari */
+// *::-webkit-scrollbar {
+//     width: 5px;
+//   }
+  
+//   *::-webkit-scrollbar-track {
+//     background: rgba(20, 16, 36, 0.08);
+//     border-radius: 40px;
+//   }
+  
+//   *::-webkit-scrollbar-thumb {
+//     background-color: #141024;
+//     border-radius: 40px;
+//     // border: 3px solid orange;
+//   }
+// =============scrollbar=============
+
+._lock{
+  overflow: hidden;
+}
+
+// ======blocks=========
+
+@import 'blocks/container';
+@import 'blocks/page';
+@import 'blocks/header';
+@import 'blocks/footer';
+@import 'blocks/herovirtual';
+@import 'blocks/maps';
+@import 'blocks/benefits';
+@import 'blocks/counter';
+@import 'blocks/faq';
+@import 'blocks/question';
+@import 'blocks/affiliateHero';
+@import 'blocks/affiliateprog';
+@import 'blocks/breadcrumps';
+@import 'blocks/participation';
+@import 'blocks/examples';
+@import 'blocks/knowledgebase';
+@import 'blocks/knowledgeask';
+@import 'blocks/single';
+@import 'blocks/dedicated';
+@import 'blocks/serverbenefits';
+@import 'blocks/hosting';
+@import 'blocks/plans';
+@import 'blocks/administration';
+@import 'blocks/promo';
+@import 'blocks/work';
+@import 'blocks/about';
+@import 'blocks/contacts';
+@import 'blocks/reselling';
+@import 'blocks/notice';
+@import 'blocks/reseller';
+@import 'blocks/billmanager';
+@import 'blocks/instruction';
+@import 'blocks/modal';
+
+
+
+
+
+

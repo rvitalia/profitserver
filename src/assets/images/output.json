@@ -1,0 +1,758 @@
+{
+    "Chelyabinsk, Russia | RU": {
+        "Optima": {
+            "month": null,
+            "3 month": 12.3,
+            "6 month": 17.22,
+            "12 month": 26.4,
+            "Cores": 1.0,
+            "RAM": 0.5,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "Profi": {
+            "month": 5.6,
+            "3 month": 15.12,
+            "6 month": 28.56,
+            "12 month": 36.96,
+            "Cores": 2.0,
+            "RAM": 1.0,
+            "SSD": 25.0,
+            "discount": null
+        },
+        "Master": {
+            "month": 11.2,
+            "3 month": 30.24,
+            "6 month": 57.12,
+            "12 month": 73.8,
+            "Cores": 4.0,
+            "RAM": 2.0,
+            "SSD": 50.0,
+            "discount": null
+        },
+        "Uber": {
+            "month": 23.9,
+            "3 month": 64.53,
+            "6 month": 121.89,
+            "12 month": 220.92,
+            "Cores": 6.0,
+            "RAM": 4.0,
+            "SSD": 75.0,
+            "discount": null
+        }
+    },
+    "Amsterdam, Netherlands | NL": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": 0.5
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": 0.5
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": 0.5
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": 0.5
+        }
+    },
+    "Frankfurt, Germany | DE": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": 0.5
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": 0.5
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": 0.5
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": 0.5
+        }
+    },
+    "Hong Kong | CN": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 15.0,
+            "discount": 0.5
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 4.0,
+            "SSD": 50.0,
+            "discount": 0.5
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 8.0,
+            "SSD": 80.0,
+            "discount": 0.5
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 12.0,
+            "SSD": 140.0,
+            "discount": 0.5
+        }
+    },
+    "Singapore | SG": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": 0.5
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": 0.5
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": 0.5
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": 0.5
+        }
+    },
+    "Madrid, Spain | ES": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": 0.5
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": 0.5
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": 0.5
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": 0.5
+        }
+    },
+    "Los Angeles, USA | US": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": 0.5
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": 0.5
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": 0.5
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": 0.5
+        }
+    },
+    "Gdansk, Poland | PL": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": null
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": null
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": null
+        }
+    },
+    "Sofia, Bulgaria | BG": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": null
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": null
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": null
+        }
+    },
+    "Geneva, Switzerland | CH": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": null
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": null
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": null
+        }
+    },
+    "Riga, Latvia | LV": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": null
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": null
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": null
+        }
+    },
+    "Prague, Czech Republic | CZ": {
+        "S": {
+            "month": 5.76,
+            "3 month": 17.28,
+            "6 month": 34.56,
+            "12 month": 69.12,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 10.0,
+            "discount": null
+        },
+        "M": {
+            "month": 11.52,
+            "3 month": 34.56,
+            "6 month": 69.12,
+            "12 month": 138.24,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "L": {
+            "month": 23.06,
+            "3 month": 69.18,
+            "6 month": 138.35,
+            "12 month": 276.7,
+            "Cores": 4.0,
+            "RAM": 4.0,
+            "SSD": 25.0,
+            "discount": null
+        },
+        "XL": {
+            "month": 46.12,
+            "3 month": 138.35,
+            "6 month": 276.7,
+            "12 month": 553.4,
+            "Cores": 8.0,
+            "RAM": 8.0,
+            "SSD": 50.0,
+            "discount": null
+        }
+    },
+    "Toronto, Canada | CA": {
+        "KVM-NVME-1": {
+            "month": 5.77,
+            "3 month": 17.31,
+            "6 month": 34.62,
+            "12 month": 69.24,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "KVM-NVME-2": {
+            "month": 6.53,
+            "3 month": 19.59,
+            "6 month": 39.18,
+            "12 month": 78.36,
+            "Cores": 2.0,
+            "RAM": 4.0,
+            "SSD": 50.0,
+            "discount": null
+        },
+        "KVM-NVME-3": {
+            "month": 11.12,
+            "3 month": 33.36,
+            "6 month": 66.72,
+            "12 month": 133.44,
+            "Cores": 4.0,
+            "RAM": 8.0,
+            "SSD": 80.0,
+            "discount": null
+        },
+        "KVM-NVME-4": {
+            "month": 17.24,
+            "3 month": 51.72,
+            "6 month": 103.44,
+            "12 month": 206.88,
+            "Cores": 8.0,
+            "RAM": 12.0,
+            "SSD": 140.0,
+            "discount": null
+        }
+    },
+    "London, UK | GB": {
+        "KVM-NVME-1": {
+            "month": 5.77,
+            "3 month": 17.31,
+            "6 month": 34.62,
+            "12 month": 69.24,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "KVM-NVME-2": {
+            "month": 6.53,
+            "3 month": 19.59,
+            "6 month": 39.18,
+            "12 month": 78.36,
+            "Cores": 2.0,
+            "RAM": 4.0,
+            "SSD": 50.0,
+            "discount": null
+        },
+        "KVM-NVME-3": {
+            "month": 11.12,
+            "3 month": 33.36,
+            "6 month": 66.72,
+            "12 month": 133.44,
+            "Cores": 4.0,
+            "RAM": 8.0,
+            "SSD": 80.0,
+            "discount": null
+        },
+        "KVM-NVME-4": {
+            "month": 17.24,
+            "3 month": 51.72,
+            "6 month": 103.44,
+            "12 month": 206.88,
+            "Cores": 8.0,
+            "RAM": 12.0,
+            "SSD": 140.0,
+            "discount": null
+        }
+    },
+    "Tel Aviv, Israel | IL": {
+        "KVM-NVME-1": {
+            "month": 5.77,
+            "3 month": 17.31,
+            "6 month": 34.62,
+            "12 month": 69.24,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "KVM-NVME-2": {
+            "month": 6.53,
+            "3 month": 19.59,
+            "6 month": 39.18,
+            "12 month": 78.36,
+            "Cores": 2.0,
+            "RAM": 4.0,
+            "SSD": 50.0,
+            "discount": null
+        },
+        "KVM-NVME-3": {
+            "month": 11.12,
+            "3 month": 33.36,
+            "6 month": 66.72,
+            "12 month": 133.44,
+            "Cores": 4.0,
+            "RAM": 8.0,
+            "SSD": 80.0,
+            "discount": null
+        },
+        "KVM-NVME-4": {
+            "month": 17.24,
+            "3 month": 51.72,
+            "6 month": 103.44,
+            "12 month": 206.88,
+            "Cores": 8.0,
+            "RAM": 12.0,
+            "SSD": 140.0,
+            "discount": null
+        }
+    },
+    "Almaty, Kazakhstan | KZ": {
+        "KVM-NVME-1": {
+            "month": 5.77,
+            "3 month": 17.31,
+            "6 month": 34.62,
+            "12 month": 69.24,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "KVM-NVME-2": {
+            "month": 6.53,
+            "3 month": 19.59,
+            "6 month": 39.18,
+            "12 month": 78.36,
+            "Cores": 2.0,
+            "RAM": 2.0,
+            "SSD": 30.0,
+            "discount": null
+        },
+        "KVM-NVME-3": {
+            "month": 11.12,
+            "3 month": 33.36,
+            "6 month": 66.72,
+            "12 month": 133.44,
+            "Cores": 2.0,
+            "RAM": 4.0,
+            "SSD": 50.0,
+            "discount": null
+        },
+        "KVM-NVME-4": {
+            "month": 17.24,
+            "3 month": 51.72,
+            "6 month": 103.44,
+            "12 month": 206.88,
+            "Cores": 4.0,
+            "RAM": 6.0,
+            "SSD": 60.0,
+            "discount": null
+        }
+    },
+    "Stockholm, Sweden | SE": {
+        "KVM-NVME-1": {
+            "month": 5.77,
+            "3 month": 17.31,
+            "6 month": 34.62,
+            "12 month": 69.24,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "KVM-NVME-2": {
+            "month": 6.53,
+            "3 month": 19.59,
+            "6 month": 39.18,
+            "12 month": 78.36,
+            "Cores": 2.0,
+            "RAM": 4.0,
+            "SSD": 50.0,
+            "discount": null
+        },
+        "KVM-NVME-3": {
+            "month": 11.12,
+            "3 month": 33.36,
+            "6 month": 66.72,
+            "12 month": 133.44,
+            "Cores": 4.0,
+            "RAM": 8.0,
+            "SSD": 80.0,
+            "discount": null
+        },
+        "KVM-NVME-4": {
+            "month": 17.24,
+            "3 month": 51.72,
+            "6 month": 103.44,
+            "12 month": 206.88,
+            "Cores": 8.0,
+            "RAM": 12.0,
+            "SSD": 140.0,
+            "discount": null
+        }
+    },
+    "Izmir, Turkey | TR": {
+        "KVM-NVME-1": {
+            "month": 5.77,
+            "3 month": 17.31,
+            "6 month": 34.62,
+            "12 month": 69.24,
+            "Cores": 1.0,
+            "RAM": 1.0,
+            "SSD": 15.0,
+            "discount": null
+        },
+        "KVM-NVME-2": {
+            "month": 6.53,
+            "3 month": 19.59,
+            "6 month": 39.18,
+            "12 month": 78.36,
+            "Cores": 2.0,
+            "RAM": 4.0,
+            "SSD": 50.0,
+            "discount": null
+        },
+        "KVM-NVME-3": {
+            "month": 11.12,
+            "3 month": 33.36,
+            "6 month": 66.72,
+            "12 month": 133.44,
+            "Cores": 4.0,
+            "RAM": 8.0,
+            "SSD": 80.0,
+            "discount": null
+        },
+        "KVM-NVME-4": {
+            "month": 17.24,
+            "3 month": 51.72,
+            "6 month": 103.44,
+            "12 month": 206.88,
+            "Cores": 8.0,
+            "RAM": 12.0,
+            "SSD": 140.0,
+            "discount": null
+        }
+    }
+}

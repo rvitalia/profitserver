@@ -1,0 +1,94 @@
+.reselling {}
+
+.reselling__inner {}
+
+.reselling__inner__title {
+    padding-top: 3.6rem;
+
+    @include mobile{
+        padding-top: 1.6rem;
+    }
+}
+
+.reselling__inner__subtitle {
+    padding-bottom: 6.5rem;
+
+    @include for-desktop{
+        padding-bottom: 5.5rem;
+    }
+
+    @include mobile{
+        padding-bottom: 3rem;
+    }
+
+    &+& {
+        padding-bottom: 5.4rem;
+
+        @include benefits{
+            padding-bottom: 3.2rem;
+        }
+    }
+
+    &:nth-child(4),
+    &:nth-child(5){
+        text-transform: none;
+    }
+}
+
+.reselling__inner__accent {
+    display: block;
+    color: #3C95CF;
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 1rem;
+
+    &+.reselling__inner__subtitle {
+        padding-bottom: 0.4rem;
+    }
+}
+
+.reselling__inner__question {
+    color: #3A3A3A;
+    text-align: center;
+    font-size: 26px;
+    padding-bottom: 6rem;
+    font-weight: 400;
+
+    @include benefits{
+        padding-bottom: 4rem;
+    }
+}
+.reselling__inner__wrapper{
+    padding-bottom: 10rem;
+
+    @include tablet{
+        padding-bottom: 6.8rem;
+    }
+}
+
+.reselling__inner__wrapper__item{
+    @include benefits{
+        display: flex;
+        flex-direction: column;
+    }
+
+    & img{
+        margin-bottom: 0.8rem;
+
+        @include for-desktop{
+            margin-left: auto;
+        }
+
+        @include benefits{
+            margin: 0;
+        }
+    }
+}
+
+.reselling__inner__wrapper__text{
+    display: block;
+    max-width: 172px;
+    text-align: center;
+    margin: 0 auto;
+}

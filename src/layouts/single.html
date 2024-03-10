@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head }}
+    <!-- если не будет использзоваться слик - убрать -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- если не будет таблиц с сортировкой - убрать -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
+</head>
+
+<body>
+    <div class="page">
+        {{> header }}
+
+
+        <main class="main">
+            {{> body }}
+        </main>
+        {{> footer }}
+
+    </div>
+
+    <!--  для вордпресса убрать - т.к там свой jquery (если не будет конфликтов со старым)-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- если не будет использзоваться слик - убрать -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- если не будет таблиц с сортировкой - убрать -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/single.js"></script>
+</body>
+
+</html>

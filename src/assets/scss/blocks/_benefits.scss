@@ -1,0 +1,120 @@
+.benefits {
+    background: #E5F1F1;
+    padding-bottom: 14.5rem;
+
+    @include for-desktop {
+        padding-bottom: 12.4rem;
+    }
+
+    @include benefits{
+        padding-bottom: 5.5rem;
+    }
+}
+
+.benefits__inner {}
+
+.benefits__inner__title,
+.benefits__inner__subtitle {
+
+    @include benefits {
+        text-align: left;
+    }
+}
+
+.benefits__inner__wrapper {
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 6rem;
+    column-gap: 1rem;
+
+    @include for-desktop {
+        justify-content: space-between;
+    }
+
+    @include benefits {
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+}
+
+.benefits__inner__wrapper__item {
+    width: 100%;
+    max-width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+
+
+    @include tablet {
+        max-width: 20rem;
+    }
+
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7) {
+
+        @include maps-object {
+            flex-basis: 45%;
+            max-width: none;
+        }
+    }
+
+    @include benefits {
+        max-width: none !important;
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+
+    &>img {
+        width: 10.6rem;
+        height: 10.6rem;
+        transition: all 0.3s linear;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+
+        @include benefits{
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+}
+
+.benefits__inner__wrapper__item__box {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0.5rem;
+}
+
+.benefits__inner__wrapper__item__box__title {
+    display: block;
+    color: #3A3A3A;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+
+    @include benefits{
+        text-align: left;
+    }
+}
+
+.benefits__inner__wrapper__item__box__subtitle {
+    display: block;
+    flex-grow: 1;
+    color: var(--black-50);
+    text-align: center;
+    font-weight: 300;
+    line-height: 24px;
+    font-size: var(--size--main);
+    
+    @include benefits{
+        text-align: left;
+    }
+}
