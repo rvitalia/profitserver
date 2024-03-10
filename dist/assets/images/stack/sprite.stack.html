@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>SVG stack preview | svg-sprite</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                color: #666;
+                background: #fafafa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.4;
+            }
+
+            header {
+                display: block;
+                padding: 3em 3em 2em;
+                background-color: #fff;
+            }
+
+            header p {
+                margin: 2em 0 0;
+            }
+
+            section {
+                border-top: 1px solid #eee;
+                padding: 2em 3em 0;
+            }
+
+            section ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            section li {
+                display: inline-block;
+                background-color: #fff;
+                position: relative;
+                margin: 0 2em 2em 0;
+                vertical-align: top;
+                border: 1px solid #ccc;
+                padding: 1em 1em 3em;
+                cursor: default;
+            }
+
+            .icon-box {
+                margin: 0;
+                width: 144px;
+                height: 144px;
+                position: relative;
+                background: #ccc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12'%3E%3Cpath fill='%23fff' d='M6 0h6v6H6zM0 6h6v6H0z'/%3E%3C/svg%3E") top left repeat;
+                border: 1px solid #ccc;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+
+            .icon {
+                display: inline-block;
+            }
+
+            h1 {
+                margin-top: 0;
+            }
+
+            h2 {
+                margin: 0;
+                padding: 0;
+                font-size: 1em;
+                font-weight: 400;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                position: absolute;
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            footer {
+                display: block;
+                margin: 0;
+                padding: 0 3em 3em;
+            }
+
+            footer p {
+                margin: 0;
+                font-size: .7em;
+            }
+
+            footer a {
+                color: #0f7595;
+                margin-left: 0;
+            }
+        </style>
+
+<!--
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as stack SVGs, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+-->
+
+<style>
+ .svg-about--group-dims { width: 107px; height: 106px; }
+ .svg-about--group2-dims { width: 107px; height: 106px; }
+ .svg-about--image-dims { width: 106px; height: 106px; }
+ .svg-about--image2-dims { width: 106px; height: 106px; }
+ .svg-about--vector-dims { width: 107px; height: 106px; }
+ .svg-about--vector2-dims { width: 107px; height: 106px; }
+ .svg-administration--image1-dims { width: 81px; height: 72px; }
+ .svg-administration--image2-dims { width: 81px; height: 72px; }
+ .svg-advantages--image1-dims { width: 106px; height: 106px; }
+ .svg-advantages--image2-dims { width: 106px; height: 106px; }
+ .svg-advantages--image3-dims { width: 106px; height: 106px; }
+ .svg-advantages--image4-dims { width: 106px; height: 106px; }
+ .svg-advantages--image5-dims { width: 106px; height: 106px; }
+ .svg-advantages--image6-dims { width: 106px; height: 106px; }
+ .svg-affiliate--CACHE-dims { width: 107px; height: 106px; }
+ .svg-affiliate--CHANGE-dims { width: 106px; height: 106px; }
+ .svg-affiliate--Mask_group-dims { width: 440px; height: 440px; }
+ .svg-affiliate--UP-dims { width: 107px; height: 106px; }
+ .svg-affiliate--WEB-dims { width: 106px; height: 106px; }
+ .svg-affiliate--checkwithoutborder-dims { width: 22px; height: 17px; }
+ .svg-affiliate--quakitygrey-dims { width: 106px; height: 106px; }
+ .svg-affiliate--qualityyellow-dims { width: 106px; height: 106px; }
+ .svg-benefits--dedicated-dims { width: 107px; height: 106px; }
+ .svg-benefits--icon_benefits_10-dims { width: 107px; height: 106px; }
+ .svg-benefits--icon_benefits_24-dims { width: 107px; height: 106px; }
+ .svg-benefits--icon_benefits_99-dims { width: 107px; height: 106px; }
+ .svg-benefits--icon_benefits_custom10-dims { width: 107px; height: 106px; }
+ .svg-benefits--icon_benefits_x10-dims { width: 107px; height: 106px; }
+ .svg-benefits--redy_os-dims { width: 107px; height: 106px; }
+ .svg-breadcrumps--arrowleft-dims { width: 10px; height: 19px; }
+ .svg-cms--image1-dims { width: 50px; height: 50px; }
+ .svg-cms--image10-dims { width: 50px; height: 50px; }
+ .svg-cms--image11-dims { width: 50px; height: 50px; }
+ .svg-cms--image12-dims { width: 50px; height: 50px; }
+ .svg-cms--image13-dims { width: 50px; height: 50px; }
+ .svg-cms--image14-dims { width: 50px; height: 50px; }
+ .svg-cms--image16-dims { width: 50px; height: 50px; }
+ .svg-cms--image2-dims { width: 50px; height: 50px; }
+ .svg-cms--image3-dims { width: 50px; height: 50px; }
+ .svg-cms--image4-dims { width: 50px; height: 50px; }
+ .svg-cms--image5-dims { width: 50px; height: 50px; }
+ .svg-cms--image6-dims { width: 50px; height: 50px; }
+ .svg-cms--image7-dims { width: 50px; height: 50px; }
+ .svg-cms--image8-dims { width: 50px; height: 50px; }
+ .svg-cms--image9-dims { width: 50px; height: 50px; }
+ .svg-footer--Group-dims { width: 168px; height: 19px; }
+ .svg-footer--Logo-dims { width: 263px; height: 64px; }
+ .svg-footer--fb.svg-dims { width: 34px; height: 34px; }
+ .svg-footer--gp.svg-dims { width: 34px; height: 34px; }
+ .svg-footer--im.svg-dims { width: 34px; height: 34px; }
+ .svg-footer--tg.svg-dims { width: 34px; height: 34px; }
+ .svg-footer--tw.svg-dims { width: 34px; height: 34px; }
+ .svg-footer--vk.svg-dims { width: 34px; height: 34px; }
+ .svg-footer--yt.svg-dims { width: 34px; height: 34px; }
+ .svg-header--Logo-dims { width: 249px; height: 60px; }
+ .svg-header--burger-dims { width: 37px; height: 22px; }
+ .svg-header--controlPanel-dims { width: 20px; height: 20px; }
+ .svg-header--gbFlag-dims { width: 24px; height: 18px; }
+ .svg-header--menu_arrow-dims { width: 13px; height: 8px; }
+ .svg-header--russianFlag-dims { width: 25px; height: 26px; }
+ .svg-herovirtual--BG-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--CA-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--CH-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--CN-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--CZ-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--DE-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--ES-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--GB-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--HK-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--IL-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--KZ-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--LV-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--NL-dims { width: 40px; height: 29px; }
+ .svg-herovirtual--PL-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--RU-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--SE-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--SG-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--TR-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--US-dims { width: 41px; height: 29px; }
+ .svg-herovirtual--icon_dedicated-dims { width: 71px; height: 52px; }
+ .svg-herovirtual--icon_dedicated_tablet-dims { width: 64px; height: 65px; }
+ .svg-herovirtual--iso-dims { width: 31px; height: 25px; }
+ .svg-herovirtual--ping-dims { width: 25px; height: 25px; }
+ .svg-herovirtual--wind-dims { width: 25px; height: 25px; }
+ .svg-hosting--hit-dims { width: 61px; height: 48px; }
+ .svg-knowledge--search-dims { width: 27px; height: 27px; }
+ .svg-public--chevron-up-dims { width: 20px; height: 20px; }
+ .svg-public--heroicons-mini-chevron-down-dims { width: 20px; height: 20px; }
+ .svg-questions--check-dims { width: 21px; height: 20px; }
+ .svg-questions--input-area-dims { width: 21px; height: 20px; }
+ .svg-questions--input-email-dims { width: 25px; height: 18px; }
+ .svg-questions--input-phone-dims { width: 13px; height: 22px; }
+ .svg-questions--input-text-dims { width: 23px; height: 22px; }
+ .svg-rating--B-dims { width: 24px; height: 25px; }
+ .svg-rating--digg-dims { width: 24px; height: 25px; }
+ .svg-rating--linkedin-dims { width: 24px; height: 25px; }
+ .svg-rating--mask-dims { width: 24px; height: 25px; }
+ .svg-rating--ok-dims { width: 24px; height: 25px; }
+ .svg-rating--pencil-dims { width: 24px; height: 25px; }
+ .svg-rating--skype-dims { width: 24px; height: 25px; }
+ .svg-rating--star-dims { width: 24px; height: 24px; }
+ .svg-rating--starempty-dims { width: 22px; height: 22px; }
+ .svg-rating--t-dims { width: 24px; height: 25px; }
+ .svg-rating--tel-dims { width: 24px; height: 25px; }
+ .svg-rating--telegram-dims { width: 24px; height: 25px; }
+ .svg-rating--twitter-dims { width: 24px; height: 25px; }
+ .svg-rating--vk-dims { width: 24px; height: 25px; }
+ .svg-rating--whatsapp-dims { width: 24px; height: 25px; }
+ .svg-reseller--image1-dims { width: 85px; height: 79px; }
+ .svg-reseller--image2-dims { width: 100px; height: 76px; }
+ .svg-reselling--image-dims { width: 106px; height: 106px; }
+ .svg-reselling--image1-dims { width: 106px; height: 106px; }
+ .svg-reselling--image3-dims { width: 106px; height: 106px; }
+ .svg-reselling--image4-dims { width: 106px; height: 106px; }
+ .svg-serversben--image-dims { width: 106px; height: 106px; }
+ .svg-serversben--image4-dims { width: 106px; height: 106px; }
+ .svg-serversben--image5-dims { width: 106px; height: 106px; }
+ .svg-serversben--image6-dims { width: 106px; height: 106px; }
+ .svg-serversben--mage2-dims { width: 106px; height: 106px; }
+ .svg-serversben--mage3-dims { width: 106px; height: 106px; }
+ .svg-svg--Group_339-dims { width: 80px; height: 80px; }
+ .svg-svg--close-dims { width: 19px; height: 19px; }
+ .svg-svg--no-dims { width: 106px; height: 106px; }
+ .svg-svg--yes-dims { width: 106px; height: 106px; }
+ .svg-work--icon-benefits-3-dims { width: 106px; height: 106px; }
+ .svg-work--icon-partners-1-dims { width: 106px; height: 106px; }
+ .svg-work--icon-partners-2-dims { width: 106px; height: 106px; }
+ .svg-work--icon-partners-3-dims { width: 106px; height: 106px; }
+</style>
+
+<!--
+====================================================================================================
+-->
+
+    </head>
+    <body>
+        <header>
+            <h1>SVG stack preview</h1>
+            <p>This preview features an SVG stack. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+            <ul>
+                <li>Your browser has to <a href="https://caniuse.com/svg-fragment" target="_blank" rel="noopener noreferrer">support SVG fragment identifiers</a> for SVG stacks to work.</li>
+                <li>Support for SVG fragment identifiers hasn't always been that decent. For older browsers you will have to use some prolyfill like <a href="https://github.com/preciousforever/SVG-Stacker/blob/master/fixsvgstack.jquery.js" target="_blank" rel="noopener noreferrer">fixsvgstack.jquery.js</a>.</li>
+            </ul>
+        </header>
+        <section>
+
+<!--
+SVG stack
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) to reference certain portions of the
+external sprite. By default, all shapes inside the sprite are hidden by CSS. The `:target` pseudo
+selector is used to show the very shape that is referenced by the fragment identifier.
+-->
+
+            <ul>
+
+             <li title="about--group">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about--group" class="svg-about--group-dims" alt="about--group">
+                    </div>
+                    <h2>about--group, </h2>
+                </li>
+             <li title="about--group2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about--group2" class="svg-about--group2-dims" alt="about--group2">
+                    </div>
+                    <h2>about--group2, </h2>
+                </li>
+             <li title="about--image">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about--image" class="svg-about--image-dims" alt="about--image">
+                    </div>
+                    <h2>about--image, </h2>
+                </li>
+             <li title="about--image2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about--image2" class="svg-about--image2-dims" alt="about--image2">
+                    </div>
+                    <h2>about--image2, </h2>
+                </li>
+             <li title="about--vector">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about--vector" class="svg-about--vector-dims" alt="about--vector">
+                    </div>
+                    <h2>about--vector, </h2>
+                </li>
+             <li title="about--vector2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#about--vector2" class="svg-about--vector2-dims" alt="about--vector2">
+                    </div>
+                    <h2>about--vector2, </h2>
+                </li>
+             <li title="administration--image1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#administration--image1" class="svg-administration--image1-dims" alt="administration--image1">
+                    </div>
+                    <h2>administration--image1, </h2>
+                </li>
+             <li title="administration--image2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#administration--image2" class="svg-administration--image2-dims" alt="administration--image2">
+                    </div>
+                    <h2>administration--image2, </h2>
+                </li>
+             <li title="advantages--image1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#advantages--image1" class="svg-advantages--image1-dims" alt="advantages--image1">
+                    </div>
+                    <h2>advantages--image1, </h2>
+                </li>
+             <li title="advantages--image2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#advantages--image2" class="svg-advantages--image2-dims" alt="advantages--image2">
+                    </div>
+                    <h2>advantages--image2, </h2>
+                </li>
+             <li title="advantages--image3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#advantages--image3" class="svg-advantages--image3-dims" alt="advantages--image3">
+                    </div>
+                    <h2>advantages--image3, </h2>
+                </li>
+             <li title="advantages--image4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#advantages--image4" class="svg-advantages--image4-dims" alt="advantages--image4">
+                    </div>
+                    <h2>advantages--image4, </h2>
+                </li>
+             <li title="advantages--image5">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#advantages--image5" class="svg-advantages--image5-dims" alt="advantages--image5">
+                    </div>
+                    <h2>advantages--image5, </h2>
+                </li>
+             <li title="advantages--image6">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#advantages--image6" class="svg-advantages--image6-dims" alt="advantages--image6">
+                    </div>
+                    <h2>advantages--image6, </h2>
+                </li>
+             <li title="affiliate--CACHE">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#affiliate--CACHE" class="svg-affiliate--CACHE-dims" alt="affiliate--CACHE">
+                    </div>
+                    <h2>affiliate--CACHE, </h2>
+                </li>
+             <li title="affiliate--CHANGE">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#affiliate--CHANGE" class="svg-affiliate--CHANGE-dims" alt="affiliate--CHANGE">
+                    </div>
+                    <h2>affiliate--CHANGE, </h2>
+                </li>
+             <li title="affiliate--Mask_group">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#affiliate--Mask_group" class="svg-affiliate--Mask_group-dims" alt="affiliate--Mask_group">
+                    </div>
+                    <h2>affiliate--Mask_group, </h2>
+                </li>
+             <li title="affiliate--UP">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#affiliate--UP" class="svg-affiliate--UP-dims" alt="affiliate--UP">
+                    </div>
+                    <h2>affiliate--UP, </h2>
+                </li>
+             <li title="affiliate--WEB">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#affiliate--WEB" class="svg-affiliate--WEB-dims" alt="affiliate--WEB">
+                    </div>
+                    <h2>affiliate--WEB, </h2>
+                </li>
+             <li title="affiliate--checkwithoutborder">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#affiliate--checkwithoutborder" class="svg-affiliate--checkwithoutborder-dims" alt="affiliate--checkwithoutborder">
+                    </div>
+                    <h2>affiliate--checkwithoutborder, </h2>
+                </li>
+             <li title="affiliate--quakitygrey">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#affiliate--quakitygrey" class="svg-affiliate--quakitygrey-dims" alt="affiliate--quakitygrey">
+                    </div>
+                    <h2>affiliate--quakitygrey, </h2>
+                </li>
+             <li title="affiliate--qualityyellow">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#affiliate--qualityyellow" class="svg-affiliate--qualityyellow-dims" alt="affiliate--qualityyellow">
+                    </div>
+                    <h2>affiliate--qualityyellow, </h2>
+                </li>
+             <li title="benefits--dedicated">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#benefits--dedicated" class="svg-benefits--dedicated-dims" alt="benefits--dedicated">
+                    </div>
+                    <h2>benefits--dedicated, </h2>
+                </li>
+             <li title="benefits--icon_benefits_10">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#benefits--icon_benefits_10" class="svg-benefits--icon_benefits_10-dims" alt="benefits--icon_benefits_10">
+                    </div>
+                    <h2>benefits--icon_benefits_10, </h2>
+                </li>
+             <li title="benefits--icon_benefits_24">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#benefits--icon_benefits_24" class="svg-benefits--icon_benefits_24-dims" alt="benefits--icon_benefits_24">
+                    </div>
+                    <h2>benefits--icon_benefits_24, </h2>
+                </li>
+             <li title="benefits--icon_benefits_99">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#benefits--icon_benefits_99" class="svg-benefits--icon_benefits_99-dims" alt="benefits--icon_benefits_99">
+                    </div>
+                    <h2>benefits--icon_benefits_99, </h2>
+                </li>
+             <li title="benefits--icon_benefits_custom10">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#benefits--icon_benefits_custom10" class="svg-benefits--icon_benefits_custom10-dims" alt="benefits--icon_benefits_custom10">
+                    </div>
+                    <h2>benefits--icon_benefits_custom10, </h2>
+                </li>
+             <li title="benefits--icon_benefits_x10">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#benefits--icon_benefits_x10" class="svg-benefits--icon_benefits_x10-dims" alt="benefits--icon_benefits_x10">
+                    </div>
+                    <h2>benefits--icon_benefits_x10, </h2>
+                </li>
+             <li title="benefits--redy_os">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#benefits--redy_os" class="svg-benefits--redy_os-dims" alt="benefits--redy_os">
+                    </div>
+                    <h2>benefits--redy_os, </h2>
+                </li>
+             <li title="breadcrumps--arrowleft">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#breadcrumps--arrowleft" class="svg-breadcrumps--arrowleft-dims" alt="breadcrumps--arrowleft">
+                    </div>
+                    <h2>breadcrumps--arrowleft, </h2>
+                </li>
+             <li title="cms--image1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image1" class="svg-cms--image1-dims" alt="cms--image1">
+                    </div>
+                    <h2>cms--image1, </h2>
+                </li>
+             <li title="cms--image10">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image10" class="svg-cms--image10-dims" alt="cms--image10">
+                    </div>
+                    <h2>cms--image10, </h2>
+                </li>
+             <li title="cms--image11">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image11" class="svg-cms--image11-dims" alt="cms--image11">
+                    </div>
+                    <h2>cms--image11, </h2>
+                </li>
+             <li title="cms--image12">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image12" class="svg-cms--image12-dims" alt="cms--image12">
+                    </div>
+                    <h2>cms--image12, </h2>
+                </li>
+             <li title="cms--image13">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image13" class="svg-cms--image13-dims" alt="cms--image13">
+                    </div>
+                    <h2>cms--image13, </h2>
+                </li>
+             <li title="cms--image14">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image14" class="svg-cms--image14-dims" alt="cms--image14">
+                    </div>
+                    <h2>cms--image14, </h2>
+                </li>
+             <li title="cms--image16">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image16" class="svg-cms--image16-dims" alt="cms--image16">
+                    </div>
+                    <h2>cms--image16, </h2>
+                </li>
+             <li title="cms--image2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image2" class="svg-cms--image2-dims" alt="cms--image2">
+                    </div>
+                    <h2>cms--image2, </h2>
+                </li>
+             <li title="cms--image3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image3" class="svg-cms--image3-dims" alt="cms--image3">
+                    </div>
+                    <h2>cms--image3, </h2>
+                </li>
+             <li title="cms--image4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image4" class="svg-cms--image4-dims" alt="cms--image4">
+                    </div>
+                    <h2>cms--image4, </h2>
+                </li>
+             <li title="cms--image5">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image5" class="svg-cms--image5-dims" alt="cms--image5">
+                    </div>
+                    <h2>cms--image5, </h2>
+                </li>
+             <li title="cms--image6">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image6" class="svg-cms--image6-dims" alt="cms--image6">
+                    </div>
+                    <h2>cms--image6, </h2>
+                </li>
+             <li title="cms--image7">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image7" class="svg-cms--image7-dims" alt="cms--image7">
+                    </div>
+                    <h2>cms--image7, </h2>
+                </li>
+             <li title="cms--image8">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image8" class="svg-cms--image8-dims" alt="cms--image8">
+                    </div>
+                    <h2>cms--image8, </h2>
+                </li>
+             <li title="cms--image9">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#cms--image9" class="svg-cms--image9-dims" alt="cms--image9">
+                    </div>
+                    <h2>cms--image9, </h2>
+                </li>
+             <li title="footer--Group">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--Group" class="svg-footer--Group-dims" alt="footer--Group">
+                    </div>
+                    <h2>footer--Group, </h2>
+                </li>
+             <li title="footer--Logo">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--Logo" class="svg-footer--Logo-dims" alt="footer--Logo">
+                    </div>
+                    <h2>footer--Logo, </h2>
+                </li>
+             <li title="footer--fb.svg">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--fb.svg" class="svg-footer--fb.svg-dims" alt="footer--fb.svg">
+                    </div>
+                    <h2>footer--fb.svg, </h2>
+                </li>
+             <li title="footer--gp.svg">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--gp.svg" class="svg-footer--gp.svg-dims" alt="footer--gp.svg">
+                    </div>
+                    <h2>footer--gp.svg, </h2>
+                </li>
+             <li title="footer--im.svg">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--im.svg" class="svg-footer--im.svg-dims" alt="footer--im.svg">
+                    </div>
+                    <h2>footer--im.svg, </h2>
+                </li>
+             <li title="footer--tg.svg">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--tg.svg" class="svg-footer--tg.svg-dims" alt="footer--tg.svg">
+                    </div>
+                    <h2>footer--tg.svg, </h2>
+                </li>
+             <li title="footer--tw.svg">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--tw.svg" class="svg-footer--tw.svg-dims" alt="footer--tw.svg">
+                    </div>
+                    <h2>footer--tw.svg, </h2>
+                </li>
+             <li title="footer--vk.svg">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--vk.svg" class="svg-footer--vk.svg-dims" alt="footer--vk.svg">
+                    </div>
+                    <h2>footer--vk.svg, </h2>
+                </li>
+             <li title="footer--yt.svg">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#footer--yt.svg" class="svg-footer--yt.svg-dims" alt="footer--yt.svg">
+                    </div>
+                    <h2>footer--yt.svg, </h2>
+                </li>
+             <li title="header--Logo">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#header--Logo" class="svg-header--Logo-dims" alt="header--Logo">
+                    </div>
+                    <h2>header--Logo, </h2>
+                </li>
+             <li title="header--burger">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#header--burger" class="svg-header--burger-dims" alt="header--burger">
+                    </div>
+                    <h2>header--burger, </h2>
+                </li>
+             <li title="header--controlPanel">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#header--controlPanel" class="svg-header--controlPanel-dims" alt="header--controlPanel">
+                    </div>
+                    <h2>header--controlPanel, </h2>
+                </li>
+             <li title="header--gbFlag">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#header--gbFlag" class="svg-header--gbFlag-dims" alt="header--gbFlag">
+                    </div>
+                    <h2>header--gbFlag, </h2>
+                </li>
+             <li title="header--menu_arrow">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#header--menu_arrow" class="svg-header--menu_arrow-dims" alt="header--menu_arrow">
+                    </div>
+                    <h2>header--menu_arrow, </h2>
+                </li>
+             <li title="header--russianFlag">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#header--russianFlag" class="svg-header--russianFlag-dims" alt="header--russianFlag">
+                    </div>
+                    <h2>header--russianFlag, </h2>
+                </li>
+             <li title="herovirtual--BG">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--BG" class="svg-herovirtual--BG-dims" alt="herovirtual--BG">
+                    </div>
+                    <h2>herovirtual--BG, </h2>
+                </li>
+             <li title="herovirtual--CA">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--CA" class="svg-herovirtual--CA-dims" alt="herovirtual--CA">
+                    </div>
+                    <h2>herovirtual--CA, </h2>
+                </li>
+             <li title="herovirtual--CH">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--CH" class="svg-herovirtual--CH-dims" alt="herovirtual--CH">
+                    </div>
+                    <h2>herovirtual--CH, </h2>
+                </li>
+             <li title="herovirtual--CN">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--CN" class="svg-herovirtual--CN-dims" alt="herovirtual--CN">
+                    </div>
+                    <h2>herovirtual--CN, </h2>
+                </li>
+             <li title="herovirtual--CZ">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--CZ" class="svg-herovirtual--CZ-dims" alt="herovirtual--CZ">
+                    </div>
+                    <h2>herovirtual--CZ, </h2>
+                </li>
+             <li title="herovirtual--DE">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--DE" class="svg-herovirtual--DE-dims" alt="herovirtual--DE">
+                    </div>
+                    <h2>herovirtual--DE, </h2>
+                </li>
+             <li title="herovirtual--ES">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--ES" class="svg-herovirtual--ES-dims" alt="herovirtual--ES">
+                    </div>
+                    <h2>herovirtual--ES, </h2>
+                </li>
+             <li title="herovirtual--GB">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--GB" class="svg-herovirtual--GB-dims" alt="herovirtual--GB">
+                    </div>
+                    <h2>herovirtual--GB, </h2>
+                </li>
+             <li title="herovirtual--HK">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--HK" class="svg-herovirtual--HK-dims" alt="herovirtual--HK">
+                    </div>
+                    <h2>herovirtual--HK, </h2>
+                </li>
+             <li title="herovirtual--IL">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--IL" class="svg-herovirtual--IL-dims" alt="herovirtual--IL">
+                    </div>
+                    <h2>herovirtual--IL, </h2>
+                </li>
+             <li title="herovirtual--KZ">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--KZ" class="svg-herovirtual--KZ-dims" alt="herovirtual--KZ">
+                    </div>
+                    <h2>herovirtual--KZ, </h2>
+                </li>
+             <li title="herovirtual--LV">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--LV" class="svg-herovirtual--LV-dims" alt="herovirtual--LV">
+                    </div>
+                    <h2>herovirtual--LV, </h2>
+                </li>
+             <li title="herovirtual--NL">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--NL" class="svg-herovirtual--NL-dims" alt="herovirtual--NL">
+                    </div>
+                    <h2>herovirtual--NL, </h2>
+                </li>
+             <li title="herovirtual--PL">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--PL" class="svg-herovirtual--PL-dims" alt="herovirtual--PL">
+                    </div>
+                    <h2>herovirtual--PL, </h2>
+                </li>
+             <li title="herovirtual--RU">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--RU" class="svg-herovirtual--RU-dims" alt="herovirtual--RU">
+                    </div>
+                    <h2>herovirtual--RU, </h2>
+                </li>
+             <li title="herovirtual--SE">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--SE" class="svg-herovirtual--SE-dims" alt="herovirtual--SE">
+                    </div>
+                    <h2>herovirtual--SE, </h2>
+                </li>
+             <li title="herovirtual--SG">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--SG" class="svg-herovirtual--SG-dims" alt="herovirtual--SG">
+                    </div>
+                    <h2>herovirtual--SG, </h2>
+                </li>
+             <li title="herovirtual--TR">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--TR" class="svg-herovirtual--TR-dims" alt="herovirtual--TR">
+                    </div>
+                    <h2>herovirtual--TR, </h2>
+                </li>
+             <li title="herovirtual--US">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--US" class="svg-herovirtual--US-dims" alt="herovirtual--US">
+                    </div>
+                    <h2>herovirtual--US, </h2>
+                </li>
+             <li title="herovirtual--icon_dedicated">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--icon_dedicated" class="svg-herovirtual--icon_dedicated-dims" alt="herovirtual--icon_dedicated">
+                    </div>
+                    <h2>herovirtual--icon_dedicated, </h2>
+                </li>
+             <li title="herovirtual--icon_dedicated_tablet">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--icon_dedicated_tablet" class="svg-herovirtual--icon_dedicated_tablet-dims" alt="herovirtual--icon_dedicated_tablet">
+                    </div>
+                    <h2>herovirtual--icon_dedicated_tablet, </h2>
+                </li>
+             <li title="herovirtual--iso">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--iso" class="svg-herovirtual--iso-dims" alt="herovirtual--iso">
+                    </div>
+                    <h2>herovirtual--iso, </h2>
+                </li>
+             <li title="herovirtual--ping">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--ping" class="svg-herovirtual--ping-dims" alt="herovirtual--ping">
+                    </div>
+                    <h2>herovirtual--ping, </h2>
+                </li>
+             <li title="herovirtual--wind">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#herovirtual--wind" class="svg-herovirtual--wind-dims" alt="herovirtual--wind">
+                    </div>
+                    <h2>herovirtual--wind, </h2>
+                </li>
+             <li title="hosting--hit">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#hosting--hit" class="svg-hosting--hit-dims" alt="hosting--hit">
+                    </div>
+                    <h2>hosting--hit, </h2>
+                </li>
+             <li title="knowledge--search">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#knowledge--search" class="svg-knowledge--search-dims" alt="knowledge--search">
+                    </div>
+                    <h2>knowledge--search, </h2>
+                </li>
+             <li title="public--chevron-up">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#public--chevron-up" class="svg-public--chevron-up-dims" alt="public--chevron-up">
+                    </div>
+                    <h2>public--chevron-up, </h2>
+                </li>
+             <li title="public--heroicons-mini-chevron-down">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#public--heroicons-mini-chevron-down" class="svg-public--heroicons-mini-chevron-down-dims" alt="public--heroicons-mini-chevron-down">
+                    </div>
+                    <h2>public--heroicons-mini-chevron-down, </h2>
+                </li>
+             <li title="questions--check">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#questions--check" class="svg-questions--check-dims" alt="questions--check">
+                    </div>
+                    <h2>questions--check, </h2>
+                </li>
+             <li title="questions--input-area">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#questions--input-area" class="svg-questions--input-area-dims" alt="questions--input-area">
+                    </div>
+                    <h2>questions--input-area, </h2>
+                </li>
+             <li title="questions--input-email">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#questions--input-email" class="svg-questions--input-email-dims" alt="questions--input-email">
+                    </div>
+                    <h2>questions--input-email, </h2>
+                </li>
+             <li title="questions--input-phone">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#questions--input-phone" class="svg-questions--input-phone-dims" alt="questions--input-phone">
+                    </div>
+                    <h2>questions--input-phone, </h2>
+                </li>
+             <li title="questions--input-text">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#questions--input-text" class="svg-questions--input-text-dims" alt="questions--input-text">
+                    </div>
+                    <h2>questions--input-text, </h2>
+                </li>
+             <li title="rating--B">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--B" class="svg-rating--B-dims" alt="rating--B">
+                    </div>
+                    <h2>rating--B, </h2>
+                </li>
+             <li title="rating--digg">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--digg" class="svg-rating--digg-dims" alt="rating--digg">
+                    </div>
+                    <h2>rating--digg, </h2>
+                </li>
+             <li title="rating--linkedin">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--linkedin" class="svg-rating--linkedin-dims" alt="rating--linkedin">
+                    </div>
+                    <h2>rating--linkedin, </h2>
+                </li>
+             <li title="rating--mask">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--mask" class="svg-rating--mask-dims" alt="rating--mask">
+                    </div>
+                    <h2>rating--mask, </h2>
+                </li>
+             <li title="rating--ok">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--ok" class="svg-rating--ok-dims" alt="rating--ok">
+                    </div>
+                    <h2>rating--ok, </h2>
+                </li>
+             <li title="rating--pencil">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--pencil" class="svg-rating--pencil-dims" alt="rating--pencil">
+                    </div>
+                    <h2>rating--pencil, </h2>
+                </li>
+             <li title="rating--skype">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--skype" class="svg-rating--skype-dims" alt="rating--skype">
+                    </div>
+                    <h2>rating--skype, </h2>
+                </li>
+             <li title="rating--star">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--star" class="svg-rating--star-dims" alt="rating--star">
+                    </div>
+                    <h2>rating--star, </h2>
+                </li>
+             <li title="rating--starempty">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--starempty" class="svg-rating--starempty-dims" alt="rating--starempty">
+                    </div>
+                    <h2>rating--starempty, </h2>
+                </li>
+             <li title="rating--t">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--t" class="svg-rating--t-dims" alt="rating--t">
+                    </div>
+                    <h2>rating--t, </h2>
+                </li>
+             <li title="rating--tel">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--tel" class="svg-rating--tel-dims" alt="rating--tel">
+                    </div>
+                    <h2>rating--tel, </h2>
+                </li>
+             <li title="rating--telegram">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--telegram" class="svg-rating--telegram-dims" alt="rating--telegram">
+                    </div>
+                    <h2>rating--telegram, </h2>
+                </li>
+             <li title="rating--twitter">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--twitter" class="svg-rating--twitter-dims" alt="rating--twitter">
+                    </div>
+                    <h2>rating--twitter, </h2>
+                </li>
+             <li title="rating--vk">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--vk" class="svg-rating--vk-dims" alt="rating--vk">
+                    </div>
+                    <h2>rating--vk, </h2>
+                </li>
+             <li title="rating--whatsapp">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#rating--whatsapp" class="svg-rating--whatsapp-dims" alt="rating--whatsapp">
+                    </div>
+                    <h2>rating--whatsapp, </h2>
+                </li>
+             <li title="reseller--image1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#reseller--image1" class="svg-reseller--image1-dims" alt="reseller--image1">
+                    </div>
+                    <h2>reseller--image1, </h2>
+                </li>
+             <li title="reseller--image2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#reseller--image2" class="svg-reseller--image2-dims" alt="reseller--image2">
+                    </div>
+                    <h2>reseller--image2, </h2>
+                </li>
+             <li title="reselling--image">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#reselling--image" class="svg-reselling--image-dims" alt="reselling--image">
+                    </div>
+                    <h2>reselling--image, </h2>
+                </li>
+             <li title="reselling--image1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#reselling--image1" class="svg-reselling--image1-dims" alt="reselling--image1">
+                    </div>
+                    <h2>reselling--image1, </h2>
+                </li>
+             <li title="reselling--image3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#reselling--image3" class="svg-reselling--image3-dims" alt="reselling--image3">
+                    </div>
+                    <h2>reselling--image3, </h2>
+                </li>
+             <li title="reselling--image4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#reselling--image4" class="svg-reselling--image4-dims" alt="reselling--image4">
+                    </div>
+                    <h2>reselling--image4, </h2>
+                </li>
+             <li title="serversben--image">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#serversben--image" class="svg-serversben--image-dims" alt="serversben--image">
+                    </div>
+                    <h2>serversben--image, </h2>
+                </li>
+             <li title="serversben--image4">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#serversben--image4" class="svg-serversben--image4-dims" alt="serversben--image4">
+                    </div>
+                    <h2>serversben--image4, </h2>
+                </li>
+             <li title="serversben--image5">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#serversben--image5" class="svg-serversben--image5-dims" alt="serversben--image5">
+                    </div>
+                    <h2>serversben--image5, </h2>
+                </li>
+             <li title="serversben--image6">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#serversben--image6" class="svg-serversben--image6-dims" alt="serversben--image6">
+                    </div>
+                    <h2>serversben--image6, </h2>
+                </li>
+             <li title="serversben--mage2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#serversben--mage2" class="svg-serversben--mage2-dims" alt="serversben--mage2">
+                    </div>
+                    <h2>serversben--mage2, </h2>
+                </li>
+             <li title="serversben--mage3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#serversben--mage3" class="svg-serversben--mage3-dims" alt="serversben--mage3">
+                    </div>
+                    <h2>serversben--mage3, </h2>
+                </li>
+             <li title="svg--Group_339">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--Group_339" class="svg-svg--Group_339-dims" alt="svg--Group_339">
+                    </div>
+                    <h2>svg--Group_339, </h2>
+                </li>
+             <li title="svg--close">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--close" class="svg-svg--close-dims" alt="svg--close">
+                    </div>
+                    <h2>svg--close, </h2>
+                </li>
+             <li title="svg--no">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--no" class="svg-svg--no-dims" alt="svg--no">
+                    </div>
+                    <h2>svg--no, </h2>
+                </li>
+             <li title="svg--yes">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#svg--yes" class="svg-svg--yes-dims" alt="svg--yes">
+                    </div>
+                    <h2>svg--yes, </h2>
+                </li>
+             <li title="work--icon-benefits-3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#work--icon-benefits-3" class="svg-work--icon-benefits-3-dims" alt="work--icon-benefits-3">
+                    </div>
+                    <h2>work--icon-benefits-3, </h2>
+                </li>
+             <li title="work--icon-partners-1">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#work--icon-partners-1" class="svg-work--icon-partners-1-dims" alt="work--icon-partners-1">
+                    </div>
+                    <h2>work--icon-partners-1, </h2>
+                </li>
+             <li title="work--icon-partners-2">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#work--icon-partners-2" class="svg-work--icon-partners-2-dims" alt="work--icon-partners-2">
+                    </div>
+                    <h2>work--icon-partners-2, </h2>
+                </li>
+             <li title="work--icon-partners-3">
+                    <div class="icon-box">
+                        <img src="../sprite.svg#work--icon-partners-3" class="svg-work--icon-partners-3-dims" alt="work--icon-partners-3">
+                    </div>
+                    <h2>work--icon-partners-3, </h2>
+                </li>
+         </ul>
+
+<!--
+====================================================================================================
+-->
+
+        </section>
+        <footer>
+            <p>Generated at Tue, 12 Dec 2023 23:01:50 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+        </footer>
+    </body>
+</html>
